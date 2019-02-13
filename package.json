@@ -1,0 +1,25 @@
+{
+  "name": "cmr",
+  "version": "1.0.0",
+  "description": "Colour saver",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasansyed/cmr.git"
+  },
+  "author": "Hasan Syed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hasansyed/cmr/issues"
+  },
+  "homepage": "https://github.com/hasansyed/cmr#readme",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-serve": "^1.4.0"
+  }
+}

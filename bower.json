@@ -1,0 +1,27 @@
+{
+  "name": "cmr",
+  "description": "Colour saver",
+  "main": "index.html",
+  "authors": [
+    "Hasan Syed"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/hasansyed/cmr",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.8",
+    "bootstrap": "^3.3.7",
+    "angularfire": "^2.0.2",
+    "jquery": "^3.1.0"
+  },
+  "devDependencies": {
+    "firebase": "2.2.1"
+  }
+}

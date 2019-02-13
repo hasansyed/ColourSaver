@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html ng-app="CMRApp" ng-cloak>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ColourSaver.</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/cmr.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Varela" rel="stylesheet">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="cmr.js"></script>
+</head>
+<body>
+    <div class="container"  ng-controller="ColorController">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="http://www.syed.co/cs"><img src="images/logo.png" alt="colorsaver"></a>
+            </div>
+        </div>
+        <div class="row">
+    
+            <div class="col-md-12">
+               <div class="bkg">
+        
+                <form ng-submit="addColor(color)">
+                    <div class="input-group">
+                        <input type="text" ng-model="color.code" class="form-control"/>
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-danger">Add</button>
+                        </span>
+                    </div>
+                    
+                </form>
+            </div>
+    </div>
+            
+                <div class="col-md-6"></div>
+        </div>
+                       <div class="row">
+                        
+            <div class="col-md-12">
+                <div class="row">
+                    <div ng-repeat="color in Colors | orderBy: '-addedOn'">
+                        <div class="clearfix" ng-if="$index % 4 == 0"></div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body"  ng-style="{backgroundColor: color.code}">
+                                    <strong>{{ color.code }}</strong>
+                                    <p class="small">{{ color.addedOn | date:'fullDate'}}</p>
+                                    <button ng-click="deleteColor(color)" class="pull-right btn btn-primary btn-xs">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <hr />
+            </div>
+            <div class="col-xs-12">
+                <footer>
+                    <p>2018 &copy; COLOURSAVER.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+    <script>
+        var config = {
+            apiKey: "",
+            authDomain: "",
+            databaseURL: "",
+            storageBucket: "",
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
